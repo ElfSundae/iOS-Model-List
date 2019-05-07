@@ -5,7 +5,7 @@
     <title>iOS Models List</title>
     <meta name="description" content="List of iOS device models">
     <style type="text/css">
-        body {
+        * {
             font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
         }
         textarea {
@@ -15,8 +15,48 @@
 </head>
 <body>
 <p>list.json</p>
-<textarea id='list' rows='7'></textarea>
-<p>NSDictionary:</p>
-<textarea id='dict' rows='7'></textarea>
+<textarea id='list' rows='7' onclick='this.focus();this.select()'></textarea>
+<p>NSDictionary</p>
+<textarea id='dict' rows='7' onclick='this.focus();this.select()'></textarea>
+
+<script>
+    fetch('https://api.ipsw.me/v4/devices')
+    .then(response => response.json())
+    .catch(error => alert(error))
+    .then(function(data) {
+        var list = {};
+        var dict = '';
+
+        const collator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
+        data.sort((a, b) => collator.compare(a.identifier, b.identifier));
+        data.forEach(function(device) {
+            if (device.identifier.startsWith('AudioAccessory')) {
+                // exclude HomePod
+                return;
+            }
+            var name = device.name
+                .replace('iPad Pro (10.5-inch', 'iPad Pro 2 (10.5-inch')
+                .replace(/\s+\([^)]+\)/g, '') // Remove (WiFi), (CDMA), (Cellular) etc
+                .replace(/[\[\]]/g, '') // iPhone 3G[S], iPhone 4[S]
+                .replace('+', ' Plus') // iPhone 6+, iPhone 6s+
+                .replace('Apple TV 2G', 'Apple TV 2')
+                .replace('Apple TV 3 (2013)', 'Apple TV 3')
+                .replace('Apple TV 4 (2015)', 'Apple TV 4')
+                .replace(/^iPad 1$/, 'iPad')
+                .replace('iPad Pro 9.7-inch', 'iPad Pro')
+                .replace('iPad Pro 12.9-inch', 'iPad Pro')
+                .replace('iPad Mini', 'iPad mini')
+                .replace('iPhone 2G', 'iPhone')
+                .replace('iPod touch 1G', 'iPod touch')
+                .replace('iPod touch 2G', 'iPod touch 2')
+
+            list[device.identifier] = name;
+            dict += `@"${device.identifier}": @"${name}",\n`;
+        });
+
+        document.getElementById('list').value = JSON.stringify(list, null, 2);
+        document.getElementById('dict').value = dict;
+    })
+</script>
 </body>
 </html>
