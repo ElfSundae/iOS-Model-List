@@ -149,6 +149,7 @@ Capturing the latest list at https://elfsundae.github.io/iOS-Models-List/ .
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSDictionary *models = @{
+            //MARK: Put The List Here...
             @"AppleTV2,1": @"Apple TV 2",
             @"AppleTV3,1": @"Apple TV 3",
             @"AppleTV3,2": @"Apple TV 3",
@@ -156,7 +157,6 @@ Capturing the latest list at https://elfsundae.github.io/iOS-Models-List/ .
             @"AppleTV6,2": @"Apple TV 4K",
             @"iPad1,1": @"iPad",
             @"iPad2,1": @"iPad 2",
-            // List Here ...
         };
         _modelName = models[self.modelIdentifier] ?: self.modelIdentifier;
     });
