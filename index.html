@@ -8,25 +8,32 @@
         * {
             font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
         }
-        textarea {
-            width: 95%;
+        .container {
+            margin: 0 auto;
+            width: 60%;
+        }
+        textarea#list, textarea#dict {
+            height: 10em;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-<p>list.json</p>
-<textarea id='list' rows='10'></textarea>
-<p>NSDictionary</p>
-<textarea id='dict' rows='10'></textarea>
+    <div class='container'>
+        <h2>iOS Models List</h2>
+
+        <p>list.json:</p>
+        <textarea id='list'></textarea>
+        <p>NSDictionary:</p>
+        <textarea id='dict'></textarea>
+
+        <p><center>GitHub: <a href="https://github.com/ElfSundae/iOS-Models-List">ElfSundae/iOS-Models-List</a></center></p>
+    </div>
 
 <script>
-    fetch('https://api.ipsw.me/v4/devices')
-    .then(response => response.json())
-    .catch(error => alert(error))
-    .then(function(data) {
+    function parseDevicesResponse(data)
+    {
         var list = {};
-        var dict = '';
-
         const collator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
         data.sort((a, b) => collator.compare(a.identifier, b.identifier));
         data.forEach(function(device) {
@@ -35,7 +42,7 @@
                 return;
             }
 
-            var name = device.name
+            let name = device.name
                 .replace('Apple TV 2G', 'Apple TV 2')
                 .replace(/^iPad 1$/, 'iPad')
                 .replace('iPad Mini', 'iPad mini')
@@ -53,12 +60,24 @@
                 .trim();
 
             list[device.identifier] = name;
-            dict += `@"${device.identifier}": @"${name}",\n`;
         });
 
-        document.getElementById('list').value = JSON.stringify(list, null, 2);
-        document.getElementById('dict').value = dict;
-    })
+        return list;
+    }
+
+    fetch('https://api.ipsw.me/v4/devices')
+    .then(response => response.json())
+    .catch(error => alert(error))
+    .then(function(data) {
+        let list = parseDevicesResponse(data);
+        document.querySelector('#list').value = JSON.stringify(list, null, 2);
+
+        var dict = '';
+        for (let key in list) {
+            dict += `@"${key}": @"${list[key]}",\n`;
+        }
+        document.querySelector('#dict').value = dict;
+    });
 </script>
 </body>
 </html>
