@@ -121,6 +121,49 @@ Capturing the latest list at https://elfsundae.github.io/iOS-Models-List/ .
 }
 ```
 
+## Examples
+
+```objc
+- (NSString *)modelIdentifier
+{
+    static NSString *_modelIdentifier = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+#if TARGET_IPHONE_SIMULATOR
+        _modelIdentifier = NSProcessInfo.processInfo.environment[@"SIMULATOR_MODEL_IDENTIFIER"];
+#else
+        size_t size;
+        sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+        char *machine = (char *)malloc(size);
+        sysctlbyname("hw.machine", machine, &size, NULL, 0);
+        _modelIdentifier = @(machine);
+        free(machine);
+#endif
+    });
+    return _modelIdentifier;
+}
+
+- (NSString *)modelName
+{
+    static NSString *_modelName = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSDictionary *models = @{
+            @"AppleTV2,1": @"Apple TV 2",
+            @"AppleTV3,1": @"Apple TV 3",
+            @"AppleTV3,2": @"Apple TV 3",
+            @"AppleTV5,3": @"Apple TV 4",
+            @"AppleTV6,2": @"Apple TV 4K",
+            @"iPad1,1": @"iPad",
+            @"iPad2,1": @"iPad 2",
+            // List Here ...
+        };
+        _modelName = models[self.modelIdentifier] ?: self.modelIdentifier;
+    });
+    return _modelName;
+}
+```
+
 ## References
 
 - [Models - The iPhone Wiki](https://www.theiphonewiki.com/wiki/Models)
