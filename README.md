@@ -115,7 +115,9 @@ Capturing the latest list at https://elfsundae.github.io/iOS-Models-List/ .
   "Watch4,1": "Apple Watch Series 4 (40mm)",
   "Watch4,2": "Apple Watch Series 4 (44mm)",
   "Watch4,3": "Apple Watch Series 4 (40mm)",
-  "Watch4,4": "Apple Watch Series 4 (44mm)"
+  "Watch4,4": "Apple Watch Series 4 (44mm)",
+  "i386": "Simulator x86",
+  "x86_64": "Simulator x64"
 }
 ```
 
