@@ -1,8 +1,8 @@
-# iOS Models List
+# iOS Model List
 
-The ultimate list of iOS device models.
+📱 The ultimate list of iOS device models - Identify your iPhone, iPad, iPod touch, ⌚️ Apple Watch, 🖥 Apple TV model.
 
-Capturing the latest list at https://elfsundae.github.io/iOS-Models-List/ .
+:rocket: Capturing the latest model list at https://0x123.com/iOS-Model-List/
 
 ## Preview:
 
