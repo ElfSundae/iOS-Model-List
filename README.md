@@ -4,7 +4,7 @@
 
 :rocket: Capturing the latest model list at https://0x123.com/iOS-Model-List/
 
-## Preview:
+## List Preview:
 
 ```json
 {
@@ -125,48 +125,30 @@
 }
 ```
 
-## Examples
+## Code Examples
 
-```objc
-- (NSString *)modelIdentifier
-{
-    static NSString *_modelIdentifier = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-#if TARGET_IPHONE_SIMULATOR
-        _modelIdentifier = NSProcessInfo.processInfo.environment[@"SIMULATOR_MODEL_IDENTIFIER"];
-#else
-        size_t size;
-        sysctlbyname("hw.machine", NULL, &size, NULL, 0);
-        char *machine = (char *)malloc(size);
-        sysctlbyname("hw.machine", machine, &size, NULL, 0);
-        _modelIdentifier = @(machine);
-        free(machine);
-#endif
-    });
-    return _modelIdentifier;
-}
+- Objective-C code `-[UIDevice modelName]` from [ESFramework](https://github.com/ElfSundae/ESFramework/blob/master/ESFramework/UIKit/UIDevice%2BESExtension.m#L86):
 
-- (NSString *)modelName
-{
-    static NSString *_modelName = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSDictionary *models = @{
-            //MARK: Put The List Here...
-            @"AppleTV2,1": @"Apple TV 2",
-            @"AppleTV3,1": @"Apple TV 3",
-            @"AppleTV3,2": @"Apple TV 3",
-            @"AppleTV5,3": @"Apple TV 4",
-            @"AppleTV6,2": @"Apple TV 4K",
-            @"iPad1,1": @"iPad",
-            @"iPad2,1": @"iPad 2",
-        };
-        _modelName = models[self.modelIdentifier] ?: self.modelIdentifier;
-    });
-    return _modelName;
-}
-```
+    ```objc
+    - (NSString *)modelName
+    {
+        static NSString *_modelName = nil;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            NSDictionary *models = @{
+
+                // MARK: Put The List Here...
+
+                @"AppleTV2,1": @"Apple TV 2",
+                @"AppleTV3,1": @"Apple TV 3",
+                @"iPad1,1": @"iPad",
+                @"iPad2,1": @"iPad 2",
+            };
+            _modelName = models[self.modelIdentifier] ?: self.modelIdentifier;
+        });
+        return _modelName;
+    }
+    ```
 
 ## References
 
