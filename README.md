@@ -120,6 +120,10 @@
   "Watch4,2": "Apple Watch Series 4 (44mm)",
   "Watch4,3": "Apple Watch Series 4 (40mm)",
   "Watch4,4": "Apple Watch Series 4 (44mm)",
+  "Watch5,1": "Apple Watch Series 5 (40mm)",
+  "Watch5,2": "Apple Watch Series 5 (44mm)",
+  "Watch5,3": "Apple Watch Series 5 (40mm)",
+  "Watch5,4": "Apple Watch Series 5 (44mm)",
   "i386": "Simulator",
   "x86_64": "Simulator"
 }
