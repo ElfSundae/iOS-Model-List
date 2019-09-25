@@ -52,6 +52,8 @@
   "iPad7,4": "iPad Pro 2 (10.5-inch)",
   "iPad7,5": "iPad 6",
   "iPad7,6": "iPad 6",
+  "iPad7,11": "iPad 7",
+  "iPad7,12": "iPad 7",
   "iPad8,1": "iPad Pro 3 (11-inch)",
   "iPad8,2": "iPad Pro 3 (11-inch)",
   "iPad8,3": "iPad Pro 3 (11-inch)",
