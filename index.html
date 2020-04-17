@@ -37,8 +37,9 @@
         const collator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
         data.sort((a, b) => collator.compare(a.identifier, b.identifier));
         data.forEach(function(device) {
-            if (device.identifier.startsWith('AudioAccessory')) {
-                // exclude HomePod
+            // exclude HomePod, iBridge
+            if (device.identifier.startsWith('AudioAccessory') ||
+                device.identifier.startsWith('iBridge')) {
                 return;
             }
 
