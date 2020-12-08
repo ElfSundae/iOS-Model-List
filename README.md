@@ -121,6 +121,9 @@ The ultimate list of iOS device models - Identify model for iPhone, iPad, iPod t
   "iPod5,1": "iPod touch 5",
   "iPod7,1": "iPod touch 6",
   "iPod9,1": "iPod touch 7",
+  "MacBookAir10,1": "MacBook Air (M1, 2020)",
+  "MacBookPro17,1": "MacBook Pro (13-inch, M1, 2020)",
+  "Macmini9,1": "Mac mini (M1, 2020)",
   "Watch1,1": "Apple Watch (38mm)",
   "Watch1,2": "Apple Watch (42mm)",
   "Watch2,3": "Apple Watch Series 2 (38mm)",
@@ -177,4 +180,7 @@ The ultimate list of iOS device models - Identify model for iPhone, iPad, iPod t
 - [Identify your iPod model - Apple Support](https://support.apple.com/en-us/HT204217)
 - [Identify your Apple Watch - Apple Support](https://support.apple.com/en-us/HT204507)
 - [Identify your Apple TV model - Apple Support](https://support.apple.com/en-us/HT200008)
+- [Identify your MacBook Air model - Apple Support](https://support.apple.com/en-us/HT201862)
+- [Identify your MacBook Pro model - Apple Support](https://support.apple.com/en-us/HT201300)
+- [Identify your Mac mini model - Apple Support](https://support.apple.com/en-us/HT201894)
 - [IPSW Downloads API](https://ipswdownloads.docs.apiary.io/#reference/api/devices/v-4-.-get-devices)

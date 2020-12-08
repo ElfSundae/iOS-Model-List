@@ -37,16 +37,17 @@
         const collator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
         data.sort((a, b) => collator.compare(a.identifier, b.identifier));
         data.forEach(function(device) {
-            // exclude HomePod, iBridge
+            // exclude HomePod, iBridge, ADP
             if (device.identifier.startsWith('AudioAccessory') ||
-                device.identifier.startsWith('iBridge')) {
+                device.identifier.startsWith('iBridge') ||
+                device.identifier.startsWith('ADP')) {
                 return;
             }
 
             let name = device.name
                 .replace('Apple TV 2G', 'Apple TV 2')
                 .replace(/^iPad 1$/, 'iPad')
-                .replace('iPad Mini', 'iPad mini')
+                .replace('Mini', 'mini') // iPad Mini, Mac Mini
                 .replace('iPad Pro 9.7-inch', 'iPad Pro (9.7-inch)')
                 .replace('iPad Pro 12.9-inch', 'iPad Pro (12.9-inch)')
                 .replace('iPad Pro (10.5-inch', 'iPad Pro 2 (10.5-inch')
@@ -56,6 +57,8 @@
                 .replace('+', ' Plus') // iPhone 6+, iPhone 6s+
                 .replace('iPod touch 1G', 'iPod touch')
                 .replace('iPod touch 2G', 'iPod touch 2')
+                .replace('MacBook Pro (M1, Late 2020)', 'MacBook Pro (13-inch, M1, 2020)')
+                .replace('M1, Late 2020', 'M1, 2020')
                 .replace(/[\s,]*(2013|2015|WiFi|GSM|CDMA|Mid 2012|Global|Cellular|China|1TB Model)/gi, '')
                 .replace(/\s+\(\s*\)/g, '')
                 .trim();
