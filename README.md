@@ -1,10 +1,10 @@
 # iOS Model List
 
-The ultimate list of iOS device models - Identify model for iPhone, iPad, iPod touch, ⌚️ Apple Watch and 🖥 Apple TV.
+The ultimate list of  iOS device models - Identify model for iPhone, iPad, iPod touch, Apple Watch, Apple TV, and Mac computers with Apple Silicon.
 
-:rocket: Capturing the latest model list at https://0x123.com/iOS-Model-List/
+:rocket: You may capture the latest model list at https://0x123.com/iOS-Model-List/
 
-## List Preview:
+### List Preview (JSON):
 
 ```json
 {
@@ -147,9 +147,9 @@ The ultimate list of iOS device models - Identify model for iPhone, iPad, iPod t
 }
 ```
 
-## Code Examples
+### Code Examples
 
-- Objective-C code `-[UIDevice modelName]` from [ESFramework](https://github.com/ElfSundae/ESFramework/blob/master/ESFramework/UIKit/UIDevice%2BESExtension.m#L86):
+- Objective-C code `-[UIDevice modelName]` from [ESFramework](https://github.com/ElfSundae/ESFramework/blob/d453db97b9e262cfafd327f8efb3c793ab6f3f7a/ESFramework/UIKit/UIDevice%2BESExtension.m#L54):
 
     ```objc
     - (NSString *)modelName
@@ -172,9 +172,8 @@ The ultimate list of iOS device models - Identify model for iPhone, iPad, iPod t
     }
     ```
 
-## References
+### References
 
-- [Models - The iPhone Wiki](https://www.theiphonewiki.com/wiki/Models)
 - [Identify your iPhone model - Apple Support](https://support.apple.com/en-us/HT201296)
 - [Identify your iPad model - Apple Support](https://support.apple.com/en-us/HT201471)
 - [Identify your iPod model - Apple Support](https://support.apple.com/en-us/HT204217)
@@ -184,3 +183,4 @@ The ultimate list of iOS device models - Identify model for iPhone, iPad, iPod t
 - [Identify your MacBook Pro model - Apple Support](https://support.apple.com/en-us/HT201300)
 - [Identify your Mac mini model - Apple Support](https://support.apple.com/en-us/HT201894)
 - [IPSW Downloads API](https://ipswdownloads.docs.apiary.io/#reference/api/devices/v-4-.-get-devices)
+- [Models - The iPhone Wiki](https://www.theiphonewiki.com/wiki/Models)
