@@ -2,38 +2,55 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>iOS Model List - 📱⌚️ Identify model for iPhone, iPad, iPod touch, Apple Watch and Apple TV.</title>
-    <meta name="description" content="📱 The ultimate list of iOS device models - Identify model for iPhone, iPad, iPod touch, ⌚️ Apple Watch and 🖥 Apple TV.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Model List - 📱⌚️ Identify model for iPhone, iPad, iPod touch, Apple Watch, Apple TV, and Mac computers with Apple Silicon</title>
+    <meta name="description" content="The ultimate list of  iOS device models - Identify model for iPhone, iPad, iPod touch, Apple Watch, Apple TV, and Mac computers with Apple Silicon.">
     <style type="text/css">
-        * {
+        body {
+            font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+            font-size: 18px;
+        }
+        code, pre, textarea {
             font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
         }
         .container {
             margin: 0 auto;
-            width: 60%;
+            width: 90%;
+        }
+        .header {
+            text-align: center;
         }
         textarea#list, textarea#dict {
-            height: 10em;
-            width: 100%;
+            height: 11em;
+            width: 90%;
+            margin-left: 2em;
+        }
+        @media only screen and (min-width: 768px) {
+            .container {
+                width: 60%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class='container'>
-        <h2><center>iOS Model List</center></h2>
-        <p><center>GitHub: <a href="https://github.com/ElfSundae/iOS-Model-List">ElfSundae/iOS-Model-List</a></center></p>
+    <div class="container">
+        <div class="header">
+            <h2>iOS Model List</h2>
+            <p>The ultimate list of  iOS device models - Identify model for iPhone, iPad, iPod touch, Apple Watch, Apple TV, and Mac computers with Apple Silicon.</p>
+            <p>GitHub: <a href="https://github.com/ElfSundae/iOS-Model-List">ElfSundae/iOS-Model-List</a></p>
+        </div>
 
-        <p>list.json:</p>
-        <textarea id='list' readonly></textarea>
+        <p><code>list.json</code>:</p>
+        <textarea id="list" readonly></textarea>
 
-        <p>NSDictionary:</p>
-        <textarea id='dict' readonly></textarea>
+        <p><code>NSDictionary</code>:</p>
+        <textarea id="dict" readonly></textarea>
     </div>
 
 <script>
     function parseDevicesResponse(data)
     {
-        var list = {};
+        let list = {};
         const collator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
         data.sort((a, b) => collator.compare(a.identifier, b.identifier));
         data.forEach(function(device) {
@@ -79,10 +96,11 @@
         let list = parseDevicesResponse(data);
         document.querySelector('#list').value = JSON.stringify(list, null, 2);
 
-        var dict = '';
+        let dict = "NSDictionary *models = @{\n";
         for (let key in list) {
-            dict += `@"${key}": @"${list[key]}",\n`;
+            dict += `    @"${key}": @"${list[key]}",\n`;
         }
+        dict += "};\n";
         document.querySelector('#dict').value = dict;
     });
 </script>
