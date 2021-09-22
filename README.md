@@ -78,6 +78,8 @@ The ultimate list of  iOS device models - Identify model for iPhone, iPad, iP
   "iPad12,2": "iPad 9",
   "iPad13,1": "iPad Air 4",
   "iPad13,2": "iPad Air 4",
+  "iPad14,1": "iPad mini 6",
+  "iPad14,2": "iPad mini 6",
   "iPhone1,1": "iPhone",
   "iPhone1,2": "iPhone 3G",
   "iPhone2,1": "iPhone 3GS",
