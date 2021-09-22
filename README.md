@@ -123,7 +123,7 @@ The ultimate list of  iOS device models - Identify model for iPhone, iPad, iP
   "iPhone12,1": "iPhone 11",
   "iPhone12,3": "iPhone 11 Pro",
   "iPhone12,5": "iPhone 11 Pro Max",
-  "iPhone12,8": "iPhone SE (2020)",
+  "iPhone12,8": "iPhone SE (2nd generation)",
   "iPhone13,1": "iPhone 12 mini",
   "iPhone13,2": "iPhone 12",
   "iPhone13,3": "iPhone 12 Pro",
