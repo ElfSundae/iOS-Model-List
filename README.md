@@ -74,6 +74,8 @@ The ultimate list of  iOS device models - Identify model for iPhone, iPad, iP
   "iPad11,4": "iPad Air 3",
   "iPad11,6": "iPad 8",
   "iPad11,7": "iPad 8",
+  "iPad12,1": "iPad 9",
+  "iPad12,2": "iPad 9",
   "iPad13,1": "iPad Air 4",
   "iPad13,2": "iPad Air 4",
   "iPhone1,1": "iPhone",
