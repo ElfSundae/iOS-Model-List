@@ -13,6 +13,8 @@ The ultimate list of  iOS device models - Identify model for iPhone, iPad, iP
   "AppleTV3,2": "Apple TV 3",
   "AppleTV5,3": "Apple TV 4",
   "AppleTV6,2": "Apple TV 4K",
+  "iMac21,1": "iMac (24-inch, M1, 2021)",
+  "iMac21,2": "iMac (24-inch, M1, 2021)",
   "iPad1,1": "iPad",
   "iPad2,1": "iPad 2",
   "iPad2,2": "iPad 2",
