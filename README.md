@@ -182,5 +182,6 @@ The ultimate list of  iOS device models - Identify model for iPhone, iPad, iP
 - [Identify your MacBook Air model - Apple Support](https://support.apple.com/en-us/HT201862)
 - [Identify your MacBook Pro model - Apple Support](https://support.apple.com/en-us/HT201300)
 - [Identify your Mac mini model - Apple Support](https://support.apple.com/en-us/HT201894)
+- [Identify your iMac model - Apple Support](https://support.apple.com/en-us/HT201634)
 - [IPSW Downloads API](https://ipswdownloads.docs.apiary.io/#reference/api/devices/v-4-.-get-devices)
 - [Models - The iPhone Wiki](https://www.theiphonewiki.com/wiki/Models)
