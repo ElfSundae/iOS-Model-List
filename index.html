@@ -79,6 +79,7 @@
                 .replace('MacBook Pro (M1, Late 2020)', 'MacBook Pro (13-inch, M1, 2020)')
                 .replace('M1, Late 2020', 'M1, 2020')
                 .replace(/iMac 24-inch \(M1, .+, 2021\)/, 'iMac (24-inch, M1, 2021)')
+                .replace(/(M1 Pro|M1 Max), /, '')
                 .replace(/[\s,]*(2013|2015|WiFi|GSM|CDMA|Mid 2012|Global|Cellular|China|1TB Model)/gi, '')
                 .replace(/\s+\(\s*\)/g, '')
                 .trim();
