@@ -151,6 +151,7 @@ The ultimate list of  iOS device models - Identify model for iPhone, iPad, iP
   "MacBookPro18,3": "MacBook Pro (14-inch, 2021)",
   "MacBookPro18,4": "MacBook Pro (14-inch, 2021)",
   "Macmini9,1": "Mac mini (M1, 2020)",
+  "VirtualMac2,1": "Apple Virtual Machine 1",
   "Watch1,1": "Apple Watch (38mm)",
   "Watch1,2": "Apple Watch (42mm)",
   "Watch2,3": "Apple Watch Series 2 (38mm)",
