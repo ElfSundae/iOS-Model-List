@@ -144,6 +144,8 @@ The ultimate list of  iOS device models - Identify model for iPhone, iPad, iP
   "iPod9,1": "iPod touch 7",
   "Mac13,1": "Mac Studio (M1 Max)",
   "Mac13,2": "Mac Studio (M1 Ultra)",
+  "Mac14,2": "MacBook Air (M2, 2022)",
+  "Mac14,7": "MacBook Pro (13-inch, M2, 2022)",
   "MacBookAir10,1": "MacBook Air (M1, 2020)",
   "MacBookPro17,1": "MacBook Pro (13-inch, M1, 2020)",
   "MacBookPro18,1": "MacBook Pro (16-inch, 2021)",
